@@ -5,6 +5,7 @@ import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
 import CategoryPage from "./pages/CategoryPage";
+import CartPage from "./pages/CartPage";
 
 
 import Navbar from "./components/Navbar";
@@ -50,6 +51,7 @@ function App() {
 						element={user?.role === "admin" ? <AdminPage /> : <Navigate to='/login' />}
 					/>
                     <Route path='/category/:category' element={<CategoryPage />} />
+                    <Route path='/cart' element={user ? <CartPage /> : <Navigate to='/login' />} />
 				</Routes>
 			</div>
 			<Toaster />
